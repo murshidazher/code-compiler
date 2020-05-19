@@ -1,8 +1,4 @@
-const {
-    exec,
-    execFile,
-    spawn
-} = require('child_process');
+const { exec, spawn } = require('child_process');
 
 var executeCSharp = function (stdin, callback, exetime) {
 
@@ -82,9 +78,7 @@ var executeCSharp = function (stdin, callback, exetime) {
 
 
 const handleCSharpCompiler = () => (req, res) => {
-    const {
-        input
-    } = req.body; // custom system args
+    const { input } = req.body; // custom system args
 
     return executeCSharp(input, (stderr, stdout, exetime) => {
         res.status(200)
