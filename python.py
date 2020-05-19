@@ -1,0 +1,1 @@
+print("hello [[[jnjn]]] !"); print(2+4);
