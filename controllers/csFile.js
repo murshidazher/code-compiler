@@ -16,7 +16,7 @@ var executeCSharp = function (stdin, callback, exetime) {
                 console.log(stderr)
                 callback(output, "", new Date().getTime() / 1000 - time)
             } else {
-                var process = spawn(['Main'])
+                var process = spawn('Main')
                 var stderror = ''
                 var stdoutput = ''
                 var chk = false

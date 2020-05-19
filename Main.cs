@@ -3,6 +3,6 @@ using System;
 public class HelloWorld {
     public static void Main() 
     {
-        Console.WriteLine("Hello world!");
+        Console.WriteLine("Hello world for all people!");
     }
 }
