@@ -83,8 +83,8 @@ const handleCSharpCompiler = () => (req, res) => {
     return executeCSharp(input, (stderr, stdout, exetime) => {
         res.status(200)
             .json({
-                stderr: stderr,
-                stdout: stdout,
+                error: stderr,
+                output: stdout,
                 exetime: exetime
             });
     })
