@@ -4,11 +4,11 @@ var executeCSharp = function (stdin, callback, exetime) {
 
     var flag = 1;
     let time = new Date().getTime() / 1000;
-    exec('javac Main.java', (err, stdout, stderr) => {
+    exec('csc Main.cs', (err, stdout, stderr) => {
         if (err) {
             output = err + ""
             console.log(err + "")
-            output = output.replace('Error: Command failed: javac Main.java', '')
+            output = output.replace('Error: Command failed: csc Main.cs', '')
             callback(output, "", new Date().getTime() / 1000 - time)
         } else {
             if (stderr) {
@@ -16,7 +16,7 @@ var executeCSharp = function (stdin, callback, exetime) {
                 console.log(stderr)
                 callback(output, "", new Date().getTime() / 1000 - time)
             } else {
-                var process = spawn('java', ['Main'])
+                var process = spawn(['Main'])
                 var stderror = ''
                 var stdoutput = ''
                 var chk = false
