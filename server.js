@@ -2,8 +2,8 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 
-const fs=require('fs');
-var path=require('path');
+const fs = require('fs');
+const path = require('path');
 
 // handlers
 const pythonFile = require('./controllers/pythonFile');
