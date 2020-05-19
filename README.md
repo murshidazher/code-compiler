@@ -5,7 +5,8 @@ A super light-weight code compiler using Express.js
 ## Technology Stack
 * :zap: [ExpressJS](https://expressjs.com/) - lightweight web framework for Nodejs.
 
-## Native Compiler Dependencies
+### Instructions
+
 You need to have the following compilers installed
 
 * :package: [JavaSE JSK 11+](https://www.oracle.com/java/technologies/javase-jdk13-downloads.html) - Java SDK 11+ for single-line compilation
