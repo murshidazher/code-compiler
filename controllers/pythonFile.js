@@ -70,8 +70,8 @@ const handlePythonCompiler = () => (req, res) => {
     return executePython(input, (stderr, stdout, exetime) => {
         res.status(200)
             .json({
-                stderr: stderr,
-                stdout: stdout,
+                error: stderr,
+                output: stdout,
                 exetime: exetime
             });
     })
