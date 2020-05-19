@@ -48,6 +48,7 @@ A quick look at the folder structure of this project.
 - [x] Java
 - [x] CSharp
 
+Note: You can use this tool to escape code characters when testing [code-santizer](https://www.freeformatter.com/java-dotnet-escape.html#ad-output)
 
 ## Contributors
 
