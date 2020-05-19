@@ -13,7 +13,7 @@ You need to have the following compilers installed
 
 * :package: [JavaSE JDK 11+](https://www.oracle.com/java/technologies/javase-jdk13-downloads.html) - Java SDK 11+ for single-line compilation
 * :package: [Python 3](https://www.python.org/downloads/) - download the Python 3.+ version and set the ENV path
-* :package: [.NET Compiler](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/compiler-options/command-line-building-with-csc-exe) - Enable command-line compilation for CSharp .NET and the set the ENV varaible to access csc compiler
+* :package: [.NET Compiler](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/compiler-options/command-line-building-with-csc-exe) - Enable command-line compilation for CSharp .NET and the set the ENV variable to access csc compiler
 
 ### Instructions
 
@@ -46,7 +46,7 @@ A quick look at the folder structure of this project.
 
 - [x] Python
 - [x] Java
-- [ ] CSharp
+- [x] CSharp
 
 
 ## Contributors
