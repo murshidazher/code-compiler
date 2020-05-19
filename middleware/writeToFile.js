@@ -15,9 +15,9 @@ const getFileName = (filetype) => {
         'example.txt'; // if non of the types matched
 }
 
-const writeToFile = (fs) => (req, res, next) => {
+const writeToFile = (fs, filetype) => (req, res, next) => {
     console.log(req.body)
-    let { code, filetype } = req.body;
+    let { code } = req.body;
 
     let clnCode = cleanCode(code);
 
