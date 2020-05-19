@@ -1,1 +1,1 @@
-import java.util.*;import java.lang.*;class Rextester{public static void main(String args[]){System.out.println("Hello, World to all!");}}
+import java.util.Scanner;class Main{public static void main(String[] args){Scanner input=new Scanner(System.in);System.out.print("Enter an integer:");int number=input.nextInt();System.out.println("You entered"+number);input.close();}}
