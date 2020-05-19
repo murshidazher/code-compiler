@@ -25,9 +25,9 @@ A quick look at the folder structure of this project.
         ├─controllers
         ├───csFile.js
         ├───javaFile.js
-        ├───pythonFile.js
+        └───pythonFile.js
         ├─middleware
-        ├───writeToFile.js
+        └───writeToFile.js
         ├─package.json
         ├─package-lock.json
         ├─server.js
