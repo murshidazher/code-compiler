@@ -1,5 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const cors = require('cors');
 
 const fs=require('fs');
 var path=require('path');
@@ -16,6 +17,7 @@ const PORT = process.env.PORT || 4001;
 const app = express();
 
 app.use(bodyParser.json());
+app.use(cors());
 
 // end points 
 app.get('/', (req, res) => {
