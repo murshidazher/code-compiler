@@ -6,7 +6,7 @@ const cleanCode = (code) => {
 
 const getFileName = (filetype) => {
     if(filetype=='python') 
-        return 'python.py';
+        return 'Solution.py';
     else if(filetype=='java') 
         return 'Main.java';
     else if(filetype=='csharp') 
@@ -22,8 +22,9 @@ const writeToFile = (fs, filetype) => (req, res, next) => {
     let clnCode = cleanCode(code);
 
     let filename = getFileName(filetype);
+    let filepath = "./solution/two-sum/" + filetype + "/" + filename;
 
-    fs.writeFile(filename, clnCode, (err)=>{
+    fs.writeFile(filepath, clnCode, (err)=>{
         if(err) {
             console.log(err);
             return res.status(600).json(err);
