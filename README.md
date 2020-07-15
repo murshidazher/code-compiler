@@ -50,8 +50,26 @@ A quick look at the folder structure of this project.
 - [x] CSharp
 
 
-### Example Body Request
+## Body Request Configuration
 
+#### Argument 1
+Type: `String`  
+Default: ``
+Name: `code`
+
+This contains the solution for the given problem. 
+
+> :warning: Sanitize the code before sending it through the body.
+
+#### Argument 2
+Type: `String`  
+Default: ``
+Name: `input`
+
+This contains the user inputs for the given problem. It could be `null` if there isn't any user inputs.
+
+
+Example:
 ```json
 // endpoint - http://localhost:4001/python
 {
