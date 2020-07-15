@@ -43,18 +43,30 @@ A quick look at the folder structure of this project.
 
 ### Support Programing Languages
 
+>:bulb: You can use this tool to escape code characters when testing [code-santizer](https://www.freeformatter.com/java-dotnet-escape.html#ad-output)
+
 - [x] Python
 - [x] Java
 - [x] CSharp
 
->:bulb: You can use this tool to escape code characters when testing [code-santizer](https://www.freeformatter.com/java-dotnet-escape.html#ad-output)
 
 ### Example Body Request
 
 ```json
 // endpoint - http://localhost:4001/python
 {
-	"code":"class Solution(object):\r\n    def twoSum(self, nums, target):\r\n        if nums is None :\r\n            return [1,0]\r\n        if len(nums) <= 1:\r\n            return [0,0]\r\n        buff_dict = {}\r\n        for i in range(len(nums)):\r\n            if nums[i] in buff_dict:\r\n                return [buff_dict[nums[i]], i]\r\n            else:\r\n                buff_dict[target - nums[i]] = i",
+    "code":"class Solution(object):\r\n    
+    def twoSum(self, nums, target):\r\n       
+     if nums is None :\r\n            
+     return [1,0]\r\n        
+     if len(nums) <= 1:\r\n            
+     return [0,0]\r\n        
+     buff_dict = {}\r\n       
+      for i in range(len(nums)):\r\n            
+      if nums[i] in buff_dict:\r\n               
+       return [buff_dict[nums[i]], i]\r\n            
+       else:\r\n                
+       buff_dict[target - nums[i]] = i",
 	"input":"10"
 }
 ```
