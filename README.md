@@ -1,10 +1,9 @@
-## Code Compiler
-A super light-weight code compiler using Express.js
+# Code Compiler
+>A super light-weight code compiler using Express.js
 
 
 ## Technology Stack
 * :zap: [ExpressJS](https://expressjs.com/) - lightweight web framework for Nodejs.
-
 
 
 ### Native Compiler Dependencies
@@ -12,8 +11,8 @@ A super light-weight code compiler using Express.js
 You need to have the following compilers installed
 
 * :package: [JavaSE JDK 11+](https://www.oracle.com/java/technologies/javase-jdk13-downloads.html) - Java SDK 11+ for single-line compilation
-* :package: [Python 3](https://www.python.org/downloads/) - download the Python 3.+ version and set the ENV path
-* :package: [.NET Compiler](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/compiler-options/command-line-building-with-csc-exe) - Enable command-line compilation for CSharp .NET and the set the ENV variable to access csc compiler
+* :package: [Python 3](https://www.python.org/downloads/) - download the Python 3.+ version and set the `env` path
+* :package: [.NET Compiler](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/compiler-options/command-line-building-with-csc-exe) - Enable command-line compilation for CSharp .NET and the set the `env` variable to access csc compiler
 
 ### Instructions
 
@@ -50,11 +49,21 @@ A quick look at the folder structure of this project.
 
 >:bulb: You can use this tool to escape code characters when testing [code-santizer](https://www.freeformatter.com/java-dotnet-escape.html#ad-output)
 
+### Example Body Request
+
+```python
+# endpoint - http://localhost:4001/python
+{
+	"code":"class Solution(object):\r\n    def twoSum(self, nums, target):\r\n        if nums is None :\r\n            return [1,0]\r\n        if len(nums) <= 1:\r\n            return [0,0]\r\n        buff_dict = {}\r\n        for i in range(len(nums)):\r\n            if nums[i] in buff_dict:\r\n                return [buff_dict[nums[i]], i]\r\n            else:\r\n                buff_dict[target - nums[i]] = i",
+	"input":"10"
+}
+```
+
 ### Supporting Test Case Languages
 
 - [x] Python
 - [x] Java
-- [] CSharp
+- [ ] CSharp
 
 ## Contributors
 
