@@ -1,0 +1,2 @@
+For example, if the array is [3, 5, 2, -4, 8, 11] and the sum is 7, 
+your program should return [1, 2] because 5 + 2 = 7 and they are the first occurred value.

@@ -13,7 +13,7 @@ def integerListToString(nums, len_of_list=None):
     return json.dumps(nums[:len_of_list])
 
 def main():
-    with open('./solution/two-sum/testcase.txt', "r") as f:
+    with open('./questions/two-sum/testcase.txt', "r") as f:
         lines = f.readlines()
     i = 0
     passall = True

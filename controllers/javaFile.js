@@ -4,75 +4,95 @@
  * 
  */
 
-const { spawn } = require('child_process');
+const {
+    spawn,
+    exec,
+    execFile
+} = require('child_process');
+
+const javaExecutor = require('../questions/two-sum/java/execute');
 
 var executeJava = function (stdin, callback, exetime) {
-    let flag = 1;
+    var flag = 1
     let time = new Date().getTime() / 1000;
-    var process = spawn('java', ['Main.java']);
-    var stderror = '';
-    var stdoutput = '';
-    var chk = false;
-
-    var timeout = setTimeout(function () {
-        process.stdin.pause();
-        process.kill()
-        chk = true
-        flag = 0
-    }, 20000) // more than 20 seconds
-
-
-    if (stdin != '') {
-        process.stdin.write(stdin + " \n")
-        process.stdin.end()
-    } else {
-        process.stdin.write(stdin + " \n")
-        process.stdin.end()
-    }
-
-    process.stdout.on('data', (data) => {
-        stdoutput += data
+    // let path = 'C:\Users\MurshidAzher\coderoom\code-compiler';
+    let questionType = 'two-sum'; 
+    let path = __dirname + 'questions\\'+ questionType +'\\java\\';
+    exec("cd questions", (err, stdout, stderr) => {
+        exec("dir", (err, stdout, stderr) => {
+            console.log(stdout)
+            exec('javac questions/two-sum/java/SolutionTester.java', (err, stdout, stderr) => {
+                if (err) {
+                    output = err + ""
+                    console.log(err + "")
+                    output = output.replace('Error: Command failed: javac SolutionTester.java', '')
+                    callback(output, "", new Date().getTime() / 1000 - time)
+                } else if (stderr) {
+                    output = stderr + ""
+                    console.log(stderr)
+                    callback(output, "", new Date().getTime() / 1000 - time)
+                } else {
+                    var process1 = spawn('java', ['questions/two-sum/java/SolutionTester'])
+                    var stderror1 = ''
+                    var stdoutput1 = ''
+                    var chk = false
+                    var timeout = setTimeout(function () {
+                        process1.stdin.pause();
+                        process1.kill()
+                        chk = true
+                        flag = 0
+                    }, 25000)
+                    if (stdin != '') {
+                        process1.stdin.write(stdin + " \n")
+                        process1.stdin.end()
+                    } else {
+                        process1.stdin.write(stdin + " \n")
+                        process1.stdin.end()
+                    }
+                    process1.stdout.on('data', (data) => {
+                        stdoutput1 += data
+                    })
+                    process1.stdout.on('end', () => {
+                        process1.kill()
+                        chk = true
+                    })
+                    process1.stderr.on('data', (data) => {
+                        stderror1 += data.toString()
+                    })
+                    process1.stderr.on('end', () => {
+                        process1.kill()
+                        chk = true
+                    })
+                    process1.on('close', (code) => {
+                        if (code == 0) {
+                            output = stdoutput1 + ""
+                            console.log(stdoutput1)
+                            callback("", output, new Date().getTime() / 1000 - time)
+                        } else {
+                            output = stderror1 + ""
+                            process1.kill()
+                            chk = true
+                            console.log(stderror1)
+                            if (flag == 0)
+                                output = 'TimeLimitExceeded !'
+                            callback(output, "", new Date().getTime() / 1000 - time)
+                        }
+                    })
+                    if (chk)
+                        clearInterval(timeout)
+                }
+            })
+        })
     })
-
-    process.stdout.on('end', () => {
-        process.kill()
-        chk = true
-    })
-
-    process.stderr.on('data', (data) => {
-        stderror += data.toString()
-    })
-
-    process.stderr.on('end', () => {
-        process.kill()
-        chk = true
-    })
-
-    process.on('close', (code) => {
-        if (code == 0) {
-            output = stdoutput + ""
-            console.log(stdoutput)
-            callback("", output, new Date().getTime() / 1000 - time)
-        } else {
-            output = stderror + ""
-            process.kill()
-            chk = true
-            console.log(stderror)
-            if (flag == 0)
-                output = 'TimeLimitExceededException'
-            callback(output, "", new Date().getTime() / 1000 - time)
-        }
-    })
-
-    if (chk)
-        clearInterval(timeout)
 }
 
 
 const handleJavaCompiler = () => (req, res) => {
-    const { input } = req.body; // custom system args
+    const {
+        input
+    } = req.body; // custom system args
 
-    return executeJava(input, (stderr, stdout, exetime) => {
+    return javaExecutor.excuteTestCase(input, (stderr, stdout, exetime) => {
         res.status(200)
             .json({
                 error: stderr,
