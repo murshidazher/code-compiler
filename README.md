@@ -93,7 +93,7 @@ Example:
 
 - [x] Python
 - [x] Java
-- [ ] CSharp
+- [x] CSharp
 
 ## Contributors
 
