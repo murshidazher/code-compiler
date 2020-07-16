@@ -48,5 +48,10 @@ public class ParserUtil
 		}
 		return "[" + result.Substring(0, result.Length - 2) + "]";
 	}
+
+    public static string integerArrayToString(int[] nums)
+	{
+		return integerArrayToString(nums, nums.Length);
+	}
 	
 }
