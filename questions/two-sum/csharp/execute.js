@@ -12,7 +12,7 @@ var executeCSharp = function (stdin, callback, exetime) {
     // let path = __dirname + 'questions\\' + questionType + '\\java\\';
     const options = { cwd: __dirname };
 
-    const compile = spawn('csc', [`${__dirname}\\SolutionTester.cs`, `${__dirname}\\Solution.cs`, `${__dirname}\\ParserUtil.cs`]);
+    const compile = spawn('csc', ['SolutionTester.cs', 'Solution.cs', 'ParserUtil.cs'], options);
 
     compile.stdout.on('data', (data) => {
         console.log(`stdout: ${data}`);
@@ -25,6 +25,7 @@ var executeCSharp = function (stdin, callback, exetime) {
 
     compile.on('close', (data) => {
         if (data === 0) {
+            
             var process1 = spawn('SolutionTester', options)
             var stderror1 = ''
             var stdoutput1 = ''
