@@ -30,12 +30,15 @@ public class SolutionTester
 					// create an test execution
 					int[] ret = solution.twoSum(nums, target);
 
+					
 					testResult = Enumerable.SequenceEqual(expected, ret);
+					
 					count++;
 
 					if (!testResult)
 					{
-						testCaseResults.Add("[Fail] " + " [Input] " + "[" + string.Join(", ", nums) + "]" + ", " + target + "  [Returned] " + "[" + string.Join(", ", ret) + "]" + " [Expected] " + "[" + string.Join(", ", expected) + "]");
+						testCaseResults.Add("[Fail] " + " [Input] " + nums + ", " + target + "  [Returned] " + "[" + string.Join(", ", ret) + "]" + " [Expected] " + "[" + string.Join(", ", expected) + "]");
+					
 					}
 					else
 					{
@@ -45,6 +48,7 @@ public class SolutionTester
 			}
 			catch (Exception io)
 			{
+				Console.WriteLine(io);
 				Console.WriteLine(io.Message);
 			}
 			finally
@@ -65,5 +69,4 @@ public class SolutionTester
 			}	
 		}
 	}
-
 }

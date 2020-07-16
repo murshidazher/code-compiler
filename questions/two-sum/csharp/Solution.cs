@@ -4,7 +4,7 @@ public class Solution
 {
 	public virtual int[] twoSum(int[] nums, int target)
 	{
-		int[] res = new int[]{0, 0};
+		int[] res = new int[]{1, 0};
 		if (nums == null || nums.Length < 2)
 		{
 			return res;
