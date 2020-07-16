@@ -1,10 +1,12 @@
 const { exec, spawn } = require('child_process');
 
+const csharpExecutor = require('../questions/two-sum/csharp/execute');
+
 var executeCSharp = function (stdin, callback, exetime) {
 
     var flag = 1;
     let time = new Date().getTime() / 1000;
-    exec('csc Main.cs', (err, stdout, stderr) => {
+    exec('csc Soltuion.cs', (err, stdout, stderr) => {
         if (err) {
             output = err + ""
             console.log(err + "")
@@ -80,7 +82,7 @@ var executeCSharp = function (stdin, callback, exetime) {
 const handleCSharpCompiler = () => (req, res) => {
     const { input } = req.body; // custom system args
 
-    return executeCSharp(input, (stderr, stdout, exetime) => {
+    return csharpExecutor.excuteTestCase(input, (stderr, stdout, exetime) => {
         res.status(200)
             .json({
                 error: stderr,
