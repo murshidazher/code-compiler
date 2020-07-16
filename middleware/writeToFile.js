@@ -10,7 +10,7 @@ const getFileName = (filetype) => {
     else if(filetype=='java') 
         return 'Solution.java';
     else if(filetype=='csharp') 
-        return 'Main.cs';
+        return 'Solution.cs';
     else 
         'example.txt'; // if non of the types matched
 }
