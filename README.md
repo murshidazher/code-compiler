@@ -2,6 +2,7 @@
 
 > A super light-weight code compiler using Express.js
  
+A light-weight code compiler with test case checking and much more implemented using Express.js
 
 ## Technology Stack
 * :zap: [ExpressJS](https://expressjs.com/) - lightweight web framework for Nodejs.
