@@ -31,5 +31,22 @@ public class ParserUtil
 		}
 		return output;
 	}
+
+    // return an array as a string to save to file
+	public static string integerArrayToString(int[] nums, int length)
+	{
+		if (length == 0)
+		{
+			return "[]";
+		}
+
+		string result = "";
+		for (int index = 0; index < length; index++)
+		{
+			int number = nums[index];
+			result += Convert.ToString(number) + ", ";
+		}
+		return "[" + result.Substring(0, result.Length - 2) + "]";
+	}
 	
 }
