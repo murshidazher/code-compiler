@@ -3,7 +3,7 @@ using System;
 // this class contains the util function for string array transformations
 public class ParserUtil
 {
-    public static int[] stringToIntegerArray(string input)
+	public static int[] stringToIntegerArray(string input)
 	{
 		// null
 		if (input.Equals("null"))
@@ -32,7 +32,7 @@ public class ParserUtil
 		return output;
 	}
 
-    // return an array as a string to save to file
+	// return an array as a string to save to file
 	public static string integerArrayToString(int[] nums, int length)
 	{
 		if (length == 0)
@@ -49,9 +49,8 @@ public class ParserUtil
 		return "[" + result.Substring(0, result.Length - 2) + "]";
 	}
 
-    public static string integerArrayToString(int[] nums)
+	public static string integerArrayToString(int[] nums)
 	{
 		return integerArrayToString(nums, nums.Length);
 	}
-	
 }
