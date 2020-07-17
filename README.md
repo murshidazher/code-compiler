@@ -49,6 +49,7 @@ A quick look at the folder structure of this project.
 - [x] Python
 - [x] Java
 - [x] CSharp
+- [ ] JavaScript
 
 
 ## Body Request Configuration
@@ -95,6 +96,7 @@ Example:
 - [x] Python
 - [x] Java
 - [x] CSharp
+- [ ] JavaScript
 
 ## Contributors
 
