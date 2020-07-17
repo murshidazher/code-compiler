@@ -1,6 +1,6 @@
 var twoSum = function(nums, target) {
     if (nums == null || nums.length < 2) {
-      return [0, 0];
+      return [1, 0];
     }
     var ret = [];
     var exist = {};

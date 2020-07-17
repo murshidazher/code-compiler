@@ -9,6 +9,7 @@ const path = require('path');
 const pythonFile = require('./controllers/pythonFile');
 const javaFile = require('./controllers/javaFile');
 const csFile = require('./controllers/csFile');
+const javascriptFile = require('./controllers/javascriptFile');
 
 // middlewares
 const writer = require('./middleware/writeToFile');
@@ -27,6 +28,7 @@ app.get('/', (req, res) => {
 app.post('/python', writer.writeToFile(fs, 'python'), pythonFile.handlePythonCompiler())
 app.post('/java', writer.writeToFile(fs, 'java'), javaFile.handleJavaCompiler())
 app.post('/csharp', writer.writeToFile(fs, 'csharp'), csFile.handleCSharpCompiler())
+app.post('/javascript', writer.writeToFile(fs, 'javascript'), javascriptFile.handleJavascriptCompiler())
 
 app.listen(PORT, () => {
 	console.log(`🚀 Server is listening on port ${PORT}`)
