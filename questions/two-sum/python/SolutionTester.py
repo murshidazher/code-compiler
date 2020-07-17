@@ -31,21 +31,27 @@ def main():
         #print line
         expected = stringToIntegerList(line)
         
-        ret = Solution.Solution().twoSum(nums, target)
+        try:
+            ret = Solution.Solution().twoSum(nums, target)
 
-        if (expected != ret) :
-            if (nums is None) :
-                strnums = 'null'
+            if (expected != ret) :
+                if (nums is None) :
+                    strnums = 'null'
+                else:
+                    strnums = integerListToString(nums)
+                
+                test_result.append("[Fail] " + " [Input] " + strnums + ", " + str(target) + "  [Returned] " + integerListToString(ret) + " [Expected] " + integerListToString(expected))
+                passall = False
+                # break
             else:
-                strnums = integerListToString(nums)
-            
-            test_result.append("[Fail] " + " [Input] " + strnums + ", " + str(target) + "  [Returned] " + integerListToString(ret) + " [Expected] " + integerListToString(expected))
-            passall = False
-            # break
-        else:
-            test_result.append("[Success] Your solution passed")
+                test_result.append("[Success] Your solution passed")
+        except expression as identifier:
+            test_result.append("[Fail] exception")
+        finally:
+            i = i + 3
+        
 
-        i = i + 3
+        
         #print out
 
     # if passall == True :

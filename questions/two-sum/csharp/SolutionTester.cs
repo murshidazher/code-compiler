@@ -27,23 +27,32 @@ public class SolutionTester
 					int target = int.Parse(line);
 					line = br.ReadLine();
 					int[] expected = ParserUtil.stringToIntegerArray(line);
-					// create an test execution
-					int[] ret = solution.twoSum(nums, target);
+					
+					// wrap in try catch exception
+					try {
+						// create an test execution
+						int[] ret = solution.twoSum(nums, target);
 
-					
-					testResult = Enumerable.SequenceEqual(expected, ret);
-					
-					count++;
+						
+						testResult = Enumerable.SequenceEqual(expected, ret);
+						
+						count++;
 
-					if (!testResult)
+						if (!testResult)
+						{
+							testCaseResults.Add("[Fail] " + " [Input] " + nums + ", " + target + "  [Returned] " + "[" + string.Join(", ", ret) + "]" + " [Expected] " + "[" + string.Join(", ", expected) + "]");
+						
+						}
+						else
+						{
+							testCaseResults.Add("[Success] Your solution passed");
+						}
+					} 
+					catch (Exception io)
 					{
-						testCaseResults.Add("[Fail] " + " [Input] " + nums + ", " + target + "  [Returned] " + "[" + string.Join(", ", ret) + "]" + " [Expected] " + "[" + string.Join(", ", expected) + "]");
+						testCaseResults.Add("[Fail] exception");
+					}
 					
-					}
-					else
-					{
-						testCaseResults.Add("[Success] Your solution passed");
-					}
 				}
 			}
 			catch (Exception io)

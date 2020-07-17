@@ -27,26 +27,32 @@ public class SolutionTester {
                     int target = Integer.parseInt(line);
                     line = br.readLine();
                     int[] expected = ParserUtil.stringToIntegerArray(line);
-                    // create an test execution
-                    int[] ret = solution.twoSum(nums, target);
 
-                    //String out = ParserUtil.integerArrayToString(ret);
+                    try {
+                        // create an test execution
+                        int[] ret = solution.twoSum(nums, target);
 
-                    // create a test display name
-                    // String testCase = "Test Two Sum: Input: " + Arrays.toString(nums) + ", " + target + "; Your answer:" + Arrays.toString(ret) + "; Expected answer: " + Arrays.toString(expected);
-                    //System.out.println(testCase);
+                        //String out = ParserUtil.integerArrayToString(ret);
 
-                    testResult = Arrays.equals(expected, ret);
-                    count++;
-                    
-                    if (!testResult) {
-                        // String content = "[Fail]Failed at: Input: " + Arrays.toString(nums) + ", " + target + "; Your answer:" + Arrays.toString(ret) + "; Expected answer: " + Arrays.toString(expected);
-                        // System.out.println("[Fail]" + Arrays.toString(nums) + ", " + target + ";" + Arrays.toString(ret) + ";" + Arrays.toString(expected));
-                        testCaseResults.add("[Fail] " + " [Input] " + Arrays.toString(nums) + ", " + target + "  [Returned] " + Arrays.toString(ret) + " [Expected] " + Arrays.toString(expected));
-                    
-                        // break;
-                    } else {
-                        testCaseResults.add("[Success] Your solution passed");
+                        // create a test display name
+                        // String testCase = "Test Two Sum: Input: " + Arrays.toString(nums) + ", " + target + "; Your answer:" + Arrays.toString(ret) + "; Expected answer: " + Arrays.toString(expected);
+                        //System.out.println(testCase);
+
+                        testResult = Arrays.equals(expected, ret);
+                        count++;
+                        
+                        if (!testResult) {
+                            // String content = "[Fail]Failed at: Input: " + Arrays.toString(nums) + ", " + target + "; Your answer:" + Arrays.toString(ret) + "; Expected answer: " + Arrays.toString(expected);
+                            // System.out.println("[Fail]" + Arrays.toString(nums) + ", " + target + ";" + Arrays.toString(ret) + ";" + Arrays.toString(expected));
+                            testCaseResults.add("[Fail] " + " [Input] " + Arrays.toString(nums) + ", " + target + "  [Returned] " + Arrays.toString(ret) + " [Expected] " + Arrays.toString(expected));
+                        
+                            // break;
+                        } else {
+                            testCaseResults.add("[Success] Your solution passed");
+                        }
+                    }
+                    catch (Exception io) {
+                        testCaseResults.add("[Fail] exception");
                     }
                 }
                 // if (testResult) {
