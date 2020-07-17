@@ -39,10 +39,11 @@ A quick look at the folder structure of this project.
         └───writeToFile.js
         ├─questions
           ├─question_name
-          ├───Solution.cs
-          ├───SolutionTester.cs
-          ├───RealSolution.cs
-          └───Template.cs
+          ├───csharp
+              ├───Solution.cs
+              ├───SolutionTester.cs
+              ├───RealSolution.cs
+              └───Template.cs
           ├───java
           ├───javascript
           ├───python
