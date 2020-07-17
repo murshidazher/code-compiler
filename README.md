@@ -37,6 +37,16 @@ A quick look at the folder structure of this project.
         └───pythonFile.js
         ├─middleware
         └───writeToFile.js
+        ├─questions
+          ├─question_name
+          ├───Solution.cs
+          ├───SolutionTester.cs
+          ├───RealSolution.cs
+          └───Template.cs
+          ├───java
+          ├───javascript
+          ├───python
+          └───testcase.txt 
         ├─package.json
         ├─package-lock.json
         ├─server.js
