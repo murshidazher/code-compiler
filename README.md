@@ -56,7 +56,7 @@ A quick look at the folder structure of this project.
 #### Argument 1
 Name: `code`<br/>
 Type: `String`  
-Default: `` 
+> Default: :warning: This field is required
 
 This contains the solution for the given problem. 
 
@@ -65,7 +65,7 @@ This contains the solution for the given problem.
 #### Argument 2
 Name: `input`<br/>
 Type: `String`  
-Default: ``
+Default: `null`
 
 This contains the user inputs for the given problem. It could be `null` if there isn't any user inputs.
 
